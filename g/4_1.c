@@ -1,8 +1,16 @@
 #include<stdio.h>  
 
-void addData(unsigned int* data, unsigned int value, int index){
+// void addData(unsigned int *data, unsigned int value, int index){
+//     data[index] = value;
+// }
 
-    data[index] = value;
+// void addData(void *data, unsigned int value, int index){
+//     unsigned int *ptr = (unsigned int *)data;
+//     ptr[index] = value;
+// }
+
+void addData(void *data, unsigned int value, int index){
+    *((unsigned int *)data+index) = value;
 }
 
 int main(){
